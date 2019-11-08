@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FutureNugetPackages", "Futu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDS.Result", "FutureNugetPackages\IDS.Result\IDS.Result.csproj", "{8271FFB6-B7E6-4CFA-8210-429F04B25535}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDS.Models", "IDS.Models\IDS.Models.csproj", "{47C63D31-C557-41F4-A9FE-37F2D5623177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{8271FFB6-B7E6-4CFA-8210-429F04B25535}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8271FFB6-B7E6-4CFA-8210-429F04B25535}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8271FFB6-B7E6-4CFA-8210-429F04B25535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C63D31-C557-41F4-A9FE-37F2D5623177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C63D31-C557-41F4-A9FE-37F2D5623177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C63D31-C557-41F4-A9FE-37F2D5623177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C63D31-C557-41F4-A9FE-37F2D5623177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6897B7D6-6F9C-4CAA-99F6-09D5B87854B7} = {F74BC19D-0899-4A7F-8721-6E7D4943B409}
 		{8271FFB6-B7E6-4CFA-8210-429F04B25535} = {13E97A37-4A75-48B6-84C1-7B11ECDA5B98}
+		{47C63D31-C557-41F4-A9FE-37F2D5623177} = {13E97A37-4A75-48B6-84C1-7B11ECDA5B98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9F4943A-1AEA-45B8-9E59-D6D2A2479C89}
