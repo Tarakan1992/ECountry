@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
 
-
 namespace IDS.Result
 {
     public class ApiResult : IActionResult
