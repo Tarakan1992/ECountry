@@ -1,0 +1,13 @@
+﻿LOCK TABLES user WRITE;
+INSERT INTO user 
+VALUES
+(1, 'bf0dfbc9dc8b45e987f894e2a9b99a98', 'test.user@mailforspam.com','test.user@mailforspam.com',1,'AQAAAAEAACcQAAAAEMZXDykjXb6JPMgm3vA45gAGw/kU1KXvaMQZyoJ26pNWEX5X4b3G267dHhh2wap5Ow==','e077602a-577c-417c-a6ec-a949a097f723',NULL,0,0,NULL,NULL,1,0,'d1fe115e-71cb-40a4-abd4-f81e185454b1','TEST.USER@MAILFORSPAM.COM','TEST.USER@TEST.COM', 'Test', 'User', NULL);
+UNLOCK TABLES;
+
+
+LOCK TABLES user_role WRITE;
+INSERT INTO user_role
+(UserId,RoleId)
+VALUES
+('1', '1');
+UNLOCK TABLES;
