@@ -3,6 +3,7 @@ using ECountry.Application.CQRS.Behaviors;
 using ECountry.Infrastructure;
 using FluentValidation;
 using Hommy.ApiResult;
+using Hommy.ResultModel;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,7 @@ namespace ECountry.Web
             {
                 options.JsonSerializerOptions.IgnoreNullValues = true;
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                options.JsonSerializerOptions.Converters.Add(new FailureJsonConverter());
             });
 
             services.AddApiResult();
@@ -52,6 +54,7 @@ namespace ECountry.Web
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehavior<,>));
 
             services.AddValidatorsFromAssembly(typeof(ApplicationModule).Assembly);
+            services.AddAutoMapper(typeof(ApplicationModule));
 
             services.AddSpaStaticFiles(configuration =>
             {
