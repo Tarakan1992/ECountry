@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 namespace ECountry.Web.Controllers
 {
 
-    public class FieldController : ApiControllerBase
+    public class PropertyController : ApiControllerBase
     {
         private readonly ISender _sender;
 
-        public FieldController(ISender sender)
+        public PropertyController(ISender sender)
         {
             _sender = sender;
         }
 
-        [HttpGet("field")]
-        public async Task<ApiResult> GetFields()
+        [HttpGet("property")]
+        public async Task<ApiResult> GetProperties()
         {
-            return await _sender.Send(new GetFieldsQuery());
+            return await _sender.Send(new GetPropertiesQuery());
         }
 
-        [HttpPost("field")]
-        public async Task<ApiResult> CreateField([FromBody]CreateFieldCommand request)
+        [HttpPost("property")]
+        public async Task<ApiResult> CreateProperty([FromBody]CreatePropertyCommand request)
         {
             return await _sender.Send(request);
         }

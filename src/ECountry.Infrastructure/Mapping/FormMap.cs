@@ -3,7 +3,7 @@ using ECountry.Infrastructure.Mapping.Base;
 
 namespace ECountry.Infrastructure.Mapping
 {
-    public class FieldMap : EntityMap<Property>
+    public class FormMap : PublicEntityMap<Form>
     {
     }
 }

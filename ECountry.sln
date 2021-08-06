@@ -25,13 +25,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hommy.ApiResult", "hommy-pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hommy.ResultModel", "hommy-packages\Hommy.Result\Hommy.ResultModel.csproj", "{26C8972E-72D2-42EF-86E6-0B6C83A79577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECountry.Domain", "src\ECountry.Domain\ECountry.Domain.csproj", "{AE0A9BF0-05DA-4DD0-8737-681F926B578C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECountry.Domain", "src\ECountry.Domain\ECountry.Domain.csproj", "{AE0A9BF0-05DA-4DD0-8737-681F926B578C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECountry.Application", "src\ECountry.Application\ECountry.Application.csproj", "{8C4C554B-4CFD-4994-B463-B14D664FF888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECountry.Application", "src\ECountry.Application\ECountry.Application.csproj", "{8C4C554B-4CFD-4994-B463-B14D664FF888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECountry.Infrastructure", "src\ECountry.Infrastructure\ECountry.Infrastructure.csproj", "{5D02207F-6D50-4B45-B2B9-F894DCAC90DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECountry.Infrastructure", "src\ECountry.Infrastructure\ECountry.Infrastructure.csproj", "{5D02207F-6D50-4B45-B2B9-F894DCAC90DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECountry.Web", "src\ECountry.Web\ECountry.Web.csproj", "{E02AA9FC-4E9C-49FD-9984-DD9BA33950C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECountry.Web", "src\ECountry.Web\ECountry.Web.csproj", "{E02AA9FC-4E9C-49FD-9984-DD9BA33950C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E8CDDEC4-1887-46BC-BD70-0FBC2518640B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECountry.IntegrationTests.Web", "test\ECountry.IntegrationTests.Web\ECountry.IntegrationTests.Web.csproj", "{3704926E-C570-4832-A351-EC038BDC1950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECountry.UnitTests.Domain", "test\ECountry.UnitTests.Domain\ECountry.UnitTests.Domain.csproj", "{F1EE7CBC-2CE2-400E-9246-EBD265ED288F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,14 @@ Global
 		{E02AA9FC-4E9C-49FD-9984-DD9BA33950C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E02AA9FC-4E9C-49FD-9984-DD9BA33950C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E02AA9FC-4E9C-49FD-9984-DD9BA33950C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3704926E-C570-4832-A351-EC038BDC1950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3704926E-C570-4832-A351-EC038BDC1950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3704926E-C570-4832-A351-EC038BDC1950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3704926E-C570-4832-A351-EC038BDC1950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1EE7CBC-2CE2-400E-9246-EBD265ED288F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1EE7CBC-2CE2-400E-9246-EBD265ED288F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1EE7CBC-2CE2-400E-9246-EBD265ED288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1EE7CBC-2CE2-400E-9246-EBD265ED288F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +89,8 @@ Global
 		{8C4C554B-4CFD-4994-B463-B14D664FF888} = {F5AE8FF1-A12A-4E02-8453-27AF96EBCCDC}
 		{5D02207F-6D50-4B45-B2B9-F894DCAC90DF} = {F5AE8FF1-A12A-4E02-8453-27AF96EBCCDC}
 		{E02AA9FC-4E9C-49FD-9984-DD9BA33950C9} = {F5AE8FF1-A12A-4E02-8453-27AF96EBCCDC}
+		{3704926E-C570-4832-A351-EC038BDC1950} = {E8CDDEC4-1887-46BC-BD70-0FBC2518640B}
+		{F1EE7CBC-2CE2-400E-9246-EBD265ED288F} = {E8CDDEC4-1887-46BC-BD70-0FBC2518640B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9F4943A-1AEA-45B8-9E59-D6D2A2479C89}

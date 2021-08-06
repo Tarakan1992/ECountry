@@ -57,7 +57,7 @@ namespace Hommy.ResultModel
 
     public class ValidationFailure : Failure
     {
-        public ValidationError[] ValidationErrors { get; set; }
+        public ValidationError[] ValidationErrors { get; }
 
         public ValidationFailure(ValidationError[] validationErrors, string message = "Validation Error")
             : base(message)

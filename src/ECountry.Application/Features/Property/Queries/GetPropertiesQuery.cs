@@ -5,31 +5,31 @@ using ECountry.Application.Features.Fields.Models;
 using ECountry.Domain.Entities;
 using Hommy.ResultModel;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace ECountry.Application.Features.Fields.Queries
 {
-    public record GetFieldsQuery : IQuery<IEnumerable<FieldModel>>
+    public record GetPropertiesQuery : IQuery<PropertyModel[]>
     {
     }
 
-    public class GetFieldsQueryHandler : IQueryHandler<GetFieldsQuery, IEnumerable<FieldModel>>
+    public class GetPropertiesQueryHandler : IQueryHandler<GetPropertiesQuery, PropertyModel[]>
     {
         private readonly DbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetFieldsQueryHandler(DbContext dbContext, IMapper mapper)
+        public GetPropertiesQueryHandler(DbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
         }
 
-        public async Task<Result<IEnumerable<FieldModel>>> Handle(GetFieldsQuery request, CancellationToken cancellationToken)
+        public async Task<Result<PropertyModel[]>> Handle(GetPropertiesQuery request, CancellationToken cancellationToken)
         {
-            return await _dbContext.Set<Field>().ProjectTo<FieldModel>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken);
+            var result = await _dbContext.Set<Property>().ProjectTo<PropertyModel>(_mapper.ConfigurationProvider).ToArrayAsync(cancellationToken);
+
+            return result;
         }
     }
 }

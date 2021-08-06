@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace ECountry.Application.Features.App.Queries
 {
-    public record PingQuery : IQuery<string>
-    {
-    }
+    public record PingQuery() : IQuery<string>;
 
     public class PingQueryHandler : IQueryHandler<PingQuery, string>
     {

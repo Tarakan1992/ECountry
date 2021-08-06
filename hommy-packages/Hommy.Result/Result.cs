@@ -16,19 +16,7 @@
         }
     }
 
-    public abstract class ResultBase<TResult> : ResultBase
-        where TResult : ResultBase<TResult>
-    {
-        protected ResultBase(Failure failure) : base(failure)
-        {
-        }
-
-        protected ResultBase()
-        {
-        }
-    }
-
-    public class Result : ResultBase<Result>
+    public class Result : ResultBase
     {
 
         public Result(Failure failure) : base(failure)
@@ -86,9 +74,9 @@
         }
     }
 
-    public class Result<TObject> : ResultBase<Result<TObject>>
+    public class Result<TObject> : ResultBase
     {
-        public TObject Data { get; }
+        public TObject Data { get; set; }
 
         public Result()
         {
