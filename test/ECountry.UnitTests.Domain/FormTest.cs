@@ -32,6 +32,7 @@ namespace ECountry.UnitTests.Domain
             // Act
             var form = new Form(_formName);
 
+            // Assert
             form.Name.ShouldBe(_formName);
             form.Description.ShouldBeNull();
         }
