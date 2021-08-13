@@ -1,4 +1,4 @@
-﻿namespace ECountry.Domain.Entities.Base
+﻿namespace ECountry.Domain.Entities
 {
     public abstract class PublicEntity : Entity
     {

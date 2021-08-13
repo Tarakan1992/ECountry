@@ -1,5 +1,4 @@
-﻿using ECountry.Domain.Entities.Base;
-using System;
+﻿using System;
 
 namespace ECountry.Domain.Entities
 {

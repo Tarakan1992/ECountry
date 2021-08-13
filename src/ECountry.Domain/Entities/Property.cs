@@ -1,5 +1,4 @@
-﻿using ECountry.Domain.Entities.Base;
-using System;
+﻿using System;
 using System.Linq;
 
 namespace ECountry.Domain.Entities

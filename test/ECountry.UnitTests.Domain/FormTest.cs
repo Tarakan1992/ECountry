@@ -1,4 +1,5 @@
 ﻿using ECountry.Domain.Entities;
+using Hommy.Form;
 using Shouldly;
 using System;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ECountry.UnitTests.Domain
     {
         private const string _formName = "form_name";
         private const string _formDescription = "form_description";
+        private readonly FormDefinition formDefinition = new FormDefinition(new RootElement());
 
         [Fact]
         public void CreateForm_Success()
@@ -17,7 +19,7 @@ namespace ECountry.UnitTests.Domain
             // Arrange
 
             // Act
-            var form = new Form(_formName, _formDescription);
+            var form = new Form(_formName, _formDescription, formDefinition);
 
             // Assert
             form.Name.ShouldBe(_formName);
@@ -30,7 +32,7 @@ namespace ECountry.UnitTests.Domain
             // Arrange
 
             // Act
-            var form = new Form(_formName);
+            var form = new Form(_formName, null, formDefinition);
 
             // Assert
             form.Name.ShouldBe(_formName);
@@ -43,7 +45,7 @@ namespace ECountry.UnitTests.Domain
             // Arrange
 
             // Act
-            var exception = Assert.Throws<ArgumentNullException>(() => new Form(null, _formDescription));
+            var exception = Assert.Throws<ArgumentNullException>(() => new Form(null, _formDescription, formDefinition));
 
             // Assert
             exception.ParamName.ShouldBe("name");
@@ -59,7 +61,7 @@ namespace ECountry.UnitTests.Domain
             var tooLongFormName = new string(Enumerable.Range(1, 105).Select(x => (char)rnd.Next('a', 'z')).ToArray());
 
             // Act
-            var exception = Assert.Throws<ArgumentException>(() => new Form(tooLongFormName, _formDescription));
+            var exception = Assert.Throws<ArgumentException>(() => new Form(tooLongFormName, _formDescription, formDefinition));
 
             // Assert
             exception.Message.ShouldBe("'Name' is too long");
@@ -74,7 +76,7 @@ namespace ECountry.UnitTests.Domain
             var tooLongFormDescription = new string(Enumerable.Range(1, 1005).Select(x => (char)rnd.Next('a', 'z')).ToArray());
 
             // Act
-            var exception = Assert.Throws<ArgumentException>(() => new Form(_formName, tooLongFormDescription));
+            var exception = Assert.Throws<ArgumentException>(() => new Form(_formName, tooLongFormDescription, formDefinition));
 
             // Assert
             exception.Message.ShouldBe("'Description' is too long");

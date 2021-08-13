@@ -1,6 +1,8 @@
 using ECountry.Application;
 using ECountry.Application.CQRS.Behaviors;
+using ECountry.Domain.Repositories;
 using ECountry.Infrastructure;
+using ECountry.Infrastructure.Repositories;
 using FluentValidation;
 using Hommy.ApiResult;
 using Hommy.ResultModel;
@@ -61,6 +63,9 @@ namespace ECountry.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddTransient(typeof(IReadRepository<>), typeof(ReadRepository<>));
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

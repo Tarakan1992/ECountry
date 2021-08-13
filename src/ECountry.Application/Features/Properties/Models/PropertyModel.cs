@@ -1,8 +1,9 @@
-﻿using ECountry.Application.Common.Mappings;
+﻿using AutoMapper;
+using ECountry.Application.Common.Mappings;
 using ECountry.Domain;
 using ECountry.Domain.Entities;
 
-namespace ECountry.Application.Features.Fields.Models
+namespace ECountry.Application.Features.Properties.Models
 {
     public class PropertyModel : IMapFrom<Property>
     {

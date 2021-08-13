@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ECountry.Application.Features.Fields.Commands
+namespace ECountry.Application.Features.Properties.Commands
 {
     public record CreatePropertyCommand(string Name, PropertyType Type) : ICommand;
 

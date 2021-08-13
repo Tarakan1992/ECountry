@@ -2,7 +2,7 @@
 
 namespace ECountry.Infrastructure.Mapping
 {
-    public class DbVersionMap : EntityMap<DbVersion>
+    public class PropertyMap : EntityMap<Property>
     {
     }
 }

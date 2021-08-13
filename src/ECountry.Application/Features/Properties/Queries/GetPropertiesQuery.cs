@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using ECountry.Application.CQRS;
-using ECountry.Application.Features.Fields.Models;
+using ECountry.Application.Features.Properties.Models;
 using ECountry.Domain.Entities;
 using Hommy.ResultModel;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ECountry.Application.Features.Fields.Queries
+namespace ECountry.Application.Features.Properties.Queries
 {
     public record GetPropertiesQuery : IQuery<PropertyModel[]>
     {
@@ -27,7 +27,7 @@ namespace ECountry.Application.Features.Fields.Queries
 
         public async Task<Result<PropertyModel[]>> Handle(GetPropertiesQuery request, CancellationToken cancellationToken)
         {
-            var result = await _dbContext.Set<Property>().ProjectTo<PropertyModel>(_mapper.ConfigurationProvider).ToArrayAsync(cancellationToken);
+            var result = await _dbContext.Set<Property>().ProjectTo<PropertyModel>(_mapper.ConfigurationProvider).ToArrayAsync();
 
             return result;
         }

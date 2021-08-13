@@ -1,4 +1,5 @@
-﻿using ECountry.Domain.Entities.Base;
+﻿using ECountry.Domain.Entities;
+using Hommy.Form;
 using System;
 
 namespace ECountry.Domain.Entities
@@ -7,16 +8,23 @@ namespace ECountry.Domain.Entities
     {
         public string Name { get; private set; }
 
-        public string? Description { get; private set; }
+        public string Description { get; private set; }
 
-        public Form(string name, string? description = null)
+        public FormDefinition Definition { get; private set; }
+
+        public Form(string name, string description, FormDefinition definition)
         {
             if(name == null)
             {
                 throw new ArgumentNullException(nameof(name));
             }
 
-            if(name.Length > 100)
+            if(description == null)
+            {
+                throw new ArgumentNullException(nameof(description));
+            }
+
+            if (name.Length > 100)
             {
                 throw new ArgumentException("'Name' is too long");
             }
@@ -27,6 +35,7 @@ namespace ECountry.Domain.Entities
             }
 
             Name = name;
+            Definition = definition ?? throw new ArgumentNullException(nameof(definition));
             Description = description;
         }
     }

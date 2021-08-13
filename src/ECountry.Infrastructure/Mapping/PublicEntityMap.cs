@@ -1,9 +1,9 @@
 ﻿using ECountry.Domain;
-using ECountry.Domain.Entities.Base;
+using ECountry.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ECountry.Infrastructure.Mapping.Base
+namespace ECountry.Infrastructure.Mapping
 {
     public class PublicEntityMap<TPublicEntity> : EntityMap<TPublicEntity>
         where TPublicEntity : PublicEntity

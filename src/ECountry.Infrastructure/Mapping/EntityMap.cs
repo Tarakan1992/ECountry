@@ -1,9 +1,9 @@
-﻿using ECountry.Domain.Entities.Base;
+﻿using ECountry.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Linq;
 
-namespace ECountry.Infrastructure.Mapping.Base
+namespace ECountry.Infrastructure.Mapping
 {
     public abstract class EntityMap<TEntity> : IEntityTypeConfiguration<TEntity>
                 where TEntity : class, IEntity<int>

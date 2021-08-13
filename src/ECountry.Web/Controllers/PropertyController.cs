@@ -1,5 +1,5 @@
-﻿using ECountry.Application.Features.Fields.Commands;
-using ECountry.Application.Features.Fields.Queries;
+﻿using ECountry.Application.Features.Properties.Commands;
+using ECountry.Application.Features.Properties.Queries;
 using Hommy.ApiResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

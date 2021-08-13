@@ -1,5 +1,5 @@
-﻿using ECountry.Application.Features.Fields.Commands;
-using ECountry.Application.Features.Fields.Models;
+﻿using ECountry.Application.Features.Properties.Commands;
+using ECountry.Application.Features.Properties.Models;
 using ECountry.Domain;
 using ECountry.Web;
 using Hommy.ResultModel;
@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Shouldly;
 using System;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xunit;
 

@@ -5,4 +5,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\hommy-packages\Hommy.Form\Hommy.Form.csproj" />
+    <ProjectReference Include="..\..\hommy-packages\Hommy.Specification\Hommy.Specification.csproj" />
+  </ItemGroup>
+
 </Project>
