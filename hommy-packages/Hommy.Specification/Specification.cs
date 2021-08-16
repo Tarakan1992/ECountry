@@ -22,10 +22,7 @@ namespace Hommy.Specification
 
         protected Specification()
         {
-            _func = new Lazy<Func<T, bool>>(() =>
-            {
-                return Predicate.Compile();
-            });
+            _func = new Lazy<Func<T, bool>>(() => Predicate.Compile());
         }
 
         public static Specification<T> Create()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ECountry.Domain.Entities
 {
@@ -13,6 +14,10 @@ namespace ECountry.Domain.Entities
         public string PhoneNumber { get; private set; }
         public UserStatus Status { get; private set; }
 
+        private HashSet<Group> _groups;
+
+        public IReadOnlyCollection<Group> Groups => _groups;
+
         public User(string email, string firstName, string? middleName, string lastName, DateTime dateOfBirth, Gender gender, string phoneNumber, UserStatus status)
         {
             Email = email;
@@ -23,6 +28,7 @@ namespace ECountry.Domain.Entities
             Gender = gender;
             PhoneNumber = phoneNumber;
             Status = status;
+            _groups = new HashSet<Group>();
         }
 
         public User(string email, string firstName, string lastName, DateTime dateOfBirth, Gender gender, string phoneNumber, UserStatus status) 
@@ -32,6 +38,7 @@ namespace ECountry.Domain.Entities
 
         private User()
         {
+            _groups = new HashSet<Group>();
         }
     }
 }
