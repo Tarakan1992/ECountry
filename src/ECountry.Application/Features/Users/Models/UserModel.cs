@@ -1,7 +1,9 @@
-﻿using ECountry.Application.Common.Mappings;
+﻿using AutoMapper;
+using ECountry.Application.Common.Mappings;
 using ECountry.Domain;
 using ECountry.Domain.Entities;
 using System;
+using System.Linq;
 
 namespace ECountry.Application.Features.Users.Models
 {
@@ -15,5 +17,9 @@ namespace ECountry.Application.Features.Users.Models
         public Gender Gender { get; init; }
         public string PhoneNumber { get; init; }
         public UserStatus Status { get; init; }
+        public string[] Groups { get; init; }
+        public void Mapping(Profile profile) => 
+            profile.CreateMap<User, UserModel>()
+                .ForMember(dest => dest.Groups, map => map.MapFrom(source => source.Groups.Select(g => g.Name)));
     }
 }

@@ -34,17 +34,22 @@ namespace ECountry.Application.Features.Users.Queries
 
         public async Task<Result<UserModel[]>> Handle(GetUsersQuery request, CancellationToken cancellationToken)
         {
-            var isMaleSpec = new ExpressionSpecification<UserModel>(x => x.Gender == Gender.Male);
+            var groups = await _dbContext.Set<Group>().ToListAsync();
 
-            var isFrom21CenterySpec = new ExpressionSpecification<UserModel>(x => x.DateOfBirth.Year > 2000);
+            var user = await _dbContext.Set<User>().Include(x => x.Groups).FirstAsync(x => x.Id == 20);
 
-            var isInactiveSpec = new ExpressionSpecification<UserModel>(x => x.Status == UserStatus.Inactive);
+            foreach(var group in groups)
+            {
+                user.AddGroup(group);
+            }
 
-            var spec = (isInactiveSpec || isMaleSpec) && isFrom21CenterySpec;
+            await _dbContext.SaveChangesAsync();
+
+            user.AddGroup(new Group("Suck my dick"));
+
+            await _dbContext.SaveChangesAsync();
 
             var result = await _userRepository.Query().ProjectTo<UserModel>(_mapper.ConfigurationProvider).ToArrayAsync();
-
-            result = result.Where(spec.IsSatisfiedBy).ToArray();
 
             return result;
         }

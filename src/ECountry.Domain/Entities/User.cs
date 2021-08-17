@@ -40,5 +40,10 @@ namespace ECountry.Domain.Entities
         {
             _groups = new HashSet<Group>();
         }
+
+        public void AddGroup(Group group)
+        {
+            _groups.Add(group);
+        }
     }
 }

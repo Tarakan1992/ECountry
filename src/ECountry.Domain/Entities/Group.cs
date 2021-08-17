@@ -6,11 +6,15 @@ namespace ECountry.Domain.Entities
     {
         public string Name { get; private set; }
 
-        private HashSet<User> _users;
+        private ICollection<User> _users;
+        
+        public Group(string name)
+        {
+            Name = name;
+        }
 
         private Group()
         {
-            _users = new HashSet<User>()
         }
     }
 }

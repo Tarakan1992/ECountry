@@ -1,4 +1,5 @@
 ﻿using ECountry.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ECountry.Infrastructure.Mapping
@@ -10,7 +11,9 @@ namespace ECountry.Infrastructure.Mapping
         {
             base.Configure(builder);
 
-            builder.HasMany(x => x.Groups).WithMany("_users");
+            builder.HasMany(x => x.Groups).WithMany("_users").UsingEntity<UserGroup>(
+                j => j.HasOne(x => x.Group).WithMany(),
+                j => j.HasOne(x => x.User).WithMany());
         }
     }
 }
